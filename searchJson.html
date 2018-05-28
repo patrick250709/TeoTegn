@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		<script src="//cdn.jsdelivr.net/npm/eruda"></script> <script>eruda.init();</script>
+		
+		
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/searchJson.js"></script>
+<script>
+$(document).ready(function(){
+	initiateJson();
+	
+	 $('#search').keyup(function(){
+			searchJson($('#search').val());
+		});
+});
+</script> 
+</head> 
+<body>
+<input type="text" id="search" placeholder="Søg"/> </div> 
+<div id="search-results"></div>
+</body> </html> 
