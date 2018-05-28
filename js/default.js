@@ -19,10 +19,10 @@ $.ajax({
 
 function changeSource (videoId, sourceId, source){
     try {
-	    videoId.pause();
-	    sourceId.setAttribute('src', source);
-	    videoId.load();
-	    videoId.play();
+	    $('#'+videoId).get(0).pause();
+	    $('#'+sourceId).get(0).setAttribute('src', source);
+	    $('#'+videoId).get(0).load();
+	    $('#'+videoId).get(0).play();
 	}
 	catch(err) {
 	    console.log(err.message);

@@ -19,7 +19,7 @@ function searchJson(searchString){
    $.each(jsonData, function(key, value){
     if (value.word.search(expression) != -1 || value.link.search(expression) != -1)
     {
-     html += '<li>'+value.word+' | '+value.link+'</li>';
+     html += '<li data-src="data/'+value.link+'.mp4">'+value.word+' | '+value.link+'</li>';
     }
    });   
 	 html += '</ul>';

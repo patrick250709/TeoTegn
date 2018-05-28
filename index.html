@@ -34,6 +34,8 @@ $( document ).ready(function() {
 	$('#search-results').on('click', 'li',function(e){
 		$('#search-results').empty();
 		$('#txt_search').val('').blur();
+		changeSource('video','source',$(this).data('src'));
+		console.log($(this).data('src'));
 	});
 
 	
@@ -57,7 +59,7 @@ function callSearch(string){
 		<br>
 			
 	<video autoplay loop muted  playsinline id="video" >
-		<source id="source" src="data/video1.mp4" type="video/mp4"  />
+		<source id="source" src="data/1.mp4" type="video/mp4"  />
 Your browser does not support the video tag.
 	 </video>
 
