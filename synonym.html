@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/eruda"></script> <script>eruda.init();</script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.ajax({
+			url: "https://thesaurus.altervista.org/thesaurus/v1?word=fred&language=da_DK&output=json&key=test_only", 
+			success: function(data){
+				if (data.length != 0) {
+					output = ""; 
+					for (key in data.response) { 
+						output += data.response[key].list.synonyms+"<br>"; 
+					} 
+					$("#div1").html(output);
+					console.log(JSON.stringify(data));
+				} else $("#div1").html("empty data");
+            }, 
+			error: function(xhr, status, error){
+				$("#div1").html("An error occured: " + status + " " + error);
+			}
+		});
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Press here to retrieve synonym</button>
+<div id="div1">Output will appear here</div>
+
+</body>
+</html>
