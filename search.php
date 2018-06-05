@@ -1,5 +1,5 @@
 <?php
-$ini = parse_ini_file("php.ini"); //SKAL FLYTES TIL SIKKER LOCATION 
+$ini = parse_ini_file("../config/teotegn.ini"); //SKAL FLYTES TIL SIKKER LOCATION 
 
 $host = $ini['host'];
 $db   = $ini['db'];
@@ -34,7 +34,7 @@ if(isset($_GET['searchString'])){
 		try { 
 		$search_string = searchDb($pdo, '%'.$_GET['searchString'].'%');
 		foreach ($search_string as $row){
-				$searchList .= '<li data-src=" '.$row['fileName'].'.mp4">'.$row['word'].'filename:'.$row['fileName'].'</li>';
+				$searchList .= '<li data-src="data/'.$row['fileName'].'.mp4">'.$row['word'].'filename:'.$row['fileName'].'</li>';
 				//$searchList .='<tr>222</tr>';
 				//$searchList .='<li>222</li>';
 			}

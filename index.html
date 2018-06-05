@@ -14,7 +14,7 @@
 		<script type="text/javascript" src="js/searchJson.js"></script>
 <script>
 $( document ).ready(function() {
-	initiateJson(); //when not running mySql
+	//initiateJson(); //when not running mySql
 	
 	$('#txt_search').on('keyup',function(e){
 		var _this=$(this);
@@ -42,8 +42,8 @@ $( document ).ready(function() {
 });
 
 function callSearch(string){
-	//search(string); //mySql lookup
-	searchJson(string); //Json lookup
+	search(string); //mySql lookup
+	//searchJson(string); //Json lookup
 };
 
 </script>
