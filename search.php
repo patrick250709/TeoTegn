@@ -1,11 +1,17 @@
 <?php
-$ini = parse_ini_file("../config/teotegn.ini"); //SKAL FLYTES TIL SIKKER LOCATION 
+try{
+	$ini = parse_ini_file("../config/teotegn.ini"); //SKAL FLYTES TIL SIKKER LOCATION 
+	}
 
+try{
+	$ini = parse_ini_file("../../config/teotegn.ini"); //SKAL FLYTES TIL SIKKER LOCATION 
+	}
+	
 $host = $ini['host'];
 $db   = $ini['db'];
-$user = 'root';
-$pass = '';
-$charset = 'utf8';
+$user = $ini['user'];
+$pass = $ini['pass'];
+$charset = $charset['utf8'];
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
